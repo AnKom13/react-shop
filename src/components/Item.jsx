@@ -7,6 +7,11 @@ function Item(props) {
     price: { regularPrice: price },
     addToBasket = Function.prototype,
   } = props;
+  // const image = null;
+  // const tmp = props.displayAssets[0];
+  // const tmp2 = props.price.regularPrice;
+  // //console.log(tmp.full_background);
+  // console.log(tmp2);
 
   return (
     <div className="card">
