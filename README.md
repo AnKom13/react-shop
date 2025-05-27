@@ -1,2 +1,2 @@
 # React-shop Тестовый пример
-[Demo](https://github.com/AnKom13/react-shop).
+[Demo](https://AnKom13.github.io/react-shop).
