@@ -1,17 +1,27 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
 function Item(props) {
+  let image;
   const {
     mainId: id,
     displayName: name,
     displayDescription: description,
-    displayAssets: [{ full_background: image }],
+    //    displayAssets: [{ full_background: image }],
     price: { regularPrice: price },
-    addToBasket = Function.prototype,
+    //    addToBasket = Function.prototype,
   } = props;
-  // const image = null;
-  // const tmp = props.displayAssets[0];
-  // const tmp2 = props.price.regularPrice;
-  // //console.log(tmp.full_background);
-  // console.log(tmp2);
+  //из источника приходят данные и у некоторых нет поля full_background
+  //Это вызывает краш
+  // А эта конструкция решает эту проблему
+  try {
+    image = props.displayAssets[0].full_background;
+  } catch (error) {
+    //console.log('err->', props);
+    image = null;
+  }
+
+  const { addToBasket } = useContext(ShopContext);
 
   return (
     <div className="card">

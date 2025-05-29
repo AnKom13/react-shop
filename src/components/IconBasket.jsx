@@ -1,5 +1,9 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
 function IconBasket(props) {
-  const { order = [], handleBasketShow = Function.prototype } = props;
+  const { order = [], handleBasketShow = Function.prototype } =
+    useContext(ShopContext);
   return (
     <div
       className="icon-basket blue darken-4 white-text"

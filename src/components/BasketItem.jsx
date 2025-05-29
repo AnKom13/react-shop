@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
 function BasketItem(props) {
   const {
     id,
@@ -5,10 +8,15 @@ function BasketItem(props) {
     price,
     quantity,
     // eslint-disable-next-line
-    removeFromBasket = { removeFromBasket },
-    incQuantity = Function.prototype,
-    decQuantity = Function.prototype,
+    // removeFromBasket = { removeFromBasket },
+    // incQuantity = Function.prototype,
+    // decQuantity = Function.prototype,
   } = props;
+
+  //const { example } = useContext(ShopContext);
+  // console.log('111->', example);
+  const { removeFromBasket, incQuantity, decQuantity } =
+    useContext(ShopContext);
 
   return (
     <li className="collection-item" key={id}>
